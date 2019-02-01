@@ -1,0 +1,14 @@
+version: "3"
+services:
+  es_monitor:
+    build: .
+    container_name: es_monitor
+    working_dir: /opt/tiger/cluster-monitor
+    volumes:
+      - /Users/zhangmaoquan/work/anacapa:/opt/tiger/anacapa
+      - /Users/zhangmaoquan/work/ee/cluster-monitor:/opt/tiger/cluster-monitor
+
+    ports:
+        - "8080:8080"
+    entrypoint: ["deploy/env.sh"]
+
